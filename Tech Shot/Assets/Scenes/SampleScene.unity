@@ -351,7 +351,7 @@ GameObject:
   - component: {fileID: 598421630}
   - component: {fileID: 598421629}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: FallenSphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

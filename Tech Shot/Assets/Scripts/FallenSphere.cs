@@ -9,7 +9,10 @@ public class FallenSphere : MonoBehaviour {
     //更新
     void Update () {
         if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger)) {
-            Instantiate(sphere);
+            for (int i=0; i<10; i++)
+            {
+                Instantiate(sphere);
+            }
         }
     }
 }
