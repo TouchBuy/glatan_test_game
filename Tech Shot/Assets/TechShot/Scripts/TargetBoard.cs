@@ -6,6 +6,8 @@ public class TargetBoard : MonoBehaviour {
 
     public GameObject target_board;
     public GameObject player_model;
+    public Material no_selected_color;
+    public Material selected_color;
 
 	// Use this for initialization
 	void Start () {
@@ -24,4 +26,12 @@ public class TargetBoard : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    private void OnCollisionEnter(Collision collision) {
+        target_board.GetComponent<Renderer>().material = selected_color;
+    }
+
+    private void OnCollisionExit(Collision collision) {
+        target_board.GetComponent<Renderer>().material = no_selected_color;
+    }
 }
