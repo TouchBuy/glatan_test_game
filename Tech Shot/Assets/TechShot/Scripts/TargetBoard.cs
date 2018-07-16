@@ -27,11 +27,16 @@ public class TargetBoard : MonoBehaviour {
 		
 	}
 
-    private void OnCollisionEnter(Collision collision) {
-        target_board.GetComponent<Renderer>().material = selected_color;
+    void OnCollisionEnter(Collision collision) {
+        if (collision.gameObject.name == "LaserPointer") {
+            target_board.GetComponent<Renderer>().material = selected_color;
+            Destroy(target_board);
+        }
     }
 
-    private void OnCollisionExit(Collision collision) {
-        target_board.GetComponent<Renderer>().material = no_selected_color;
+    void OnCollisionExit(Collision collision) {
+        if (collision.gameObject.name == "LaserPointer") {
+            target_board.GetComponent<Renderer>().material = no_selected_color;
+        }
     }
 }
